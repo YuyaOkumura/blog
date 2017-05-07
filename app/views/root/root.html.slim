@@ -1,0 +1,13 @@
+h2 Root#root
+h3 最新の投稿
+- @articles.each do |article|
+  .article
+    p = article.title
+    p = article.content
+    p = article.user_id
+h3 人気の投稿
+- @popular_articles.each do |popular_article|
+  .article
+    p = popular_article.title
+    p = popular_article.content
+    p = popular_article.user_id

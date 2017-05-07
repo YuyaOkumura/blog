@@ -1,0 +1,41 @@
+// reset_css
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-family: "Hiragino Kaku Gothic Pro", YuGothic, sans-serif;
+}
+
+html,
+body {
+  font-size: 10px;
+}
+
+li {
+  list-style: none;
+  list-style-position: inside;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+input {
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+}
+
+address {
+  font-style: normal;
+}
+
+button {
+  border: none;
+  background: #fff;
+}

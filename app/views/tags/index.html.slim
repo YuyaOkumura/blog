@@ -1,0 +1,7 @@
+h1 Tags#index
+p Find me in app/views/tags/index.html.slim
+- @tags.each do |tag|
+  .tag
+    p = tag.name
+    p = tag.desc
+    p = tag.slug

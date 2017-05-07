@@ -1,0 +1,12 @@
+p#notice = notice
+
+= @article.title
+= @article.content
+= @article.user_id
+
+
+= link_to 'Edit', edit_admin_writer_article_path(@article)
+'  |
+= link_to 'Back', admin_writer_articles_path
+'  |
+= link_to 'Destroy', [:admin_writer, @article], data: { confirm: 'Are you sure?' }, method: :delete

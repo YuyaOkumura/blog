@@ -1,0 +1,2 @@
+module AdminWriter::ArticlesHelper
+end

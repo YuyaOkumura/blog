@@ -1,0 +1,7 @@
+h1 Articles#index
+p Find me in app/views/articles/index.html.slim
+- @articles.each do |article|
+  .article
+    p = article.title
+    p = article.content
+    p = article.user_id

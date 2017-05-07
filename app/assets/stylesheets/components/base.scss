@@ -1,0 +1,18 @@
+body {
+  background: $baseColor;
+}
+
+.container {
+  width: $containerWidth;
+  margin: 0 auto;
+}
+
+.sub {
+  width: 20%;
+}
+
+.main {
+  width: 70%;
+  min-height: 80vh;
+  background: $mainColor;
+}

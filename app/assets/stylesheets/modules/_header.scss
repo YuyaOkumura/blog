@@ -1,0 +1,32 @@
+.header-home-title {
+  font-size: 3rem;
+  border-bottom: 1px solid;
+  color: $accentColor;
+}
+
+.header-home-parag {
+  font-size: 1.5rem;
+  color: $darkTextColor;
+}
+
+.header-nav-list {
+  background: $mainColor;
+}
+
+.header-nav-list-item {
+  width: calc(100% / 3);
+}
+
+.header-nav-list-item:hover {
+  background: $baseColor;
+}
+
+.header-nav-list-item-link {
+  font-size: 1.5rem;
+  padding: 1.5rem 0;
+  color: $spotColor;
+}
+
+.header-nav-list-item-link:hover {
+  color: $accentColor;
+}

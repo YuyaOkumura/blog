@@ -1,0 +1,208 @@
+// 要素のきりかえ
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+
+// flex関連
+.flex {
+  display: flex;
+}
+
+.j-center {
+  justify-content: center;
+}
+
+.j-bet {
+  justify-content: space-between;
+}
+
+.j-around {
+  justify-content: space-around;
+}
+
+.a-center {
+  align-items: center;
+}
+
+
+// float関連
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+// vw,vh設定
+// vw
+.vw10 {
+  width: 10vw;
+}
+
+.vw20 {
+  width: 20vw;
+}
+
+.vw30 {
+  width: 30vw;
+}
+
+.vw40 {
+  width: 40vw;
+}
+
+.vw50 {
+  width: 50vw;
+}
+
+.vw60 {
+  width: 60vw;
+}
+
+.vw70 {
+  width: 70vw;
+}
+
+.vw80 {
+  width: 80vw;
+}
+
+.vw90 {
+  width: 90vw;
+}
+
+.vw100 {
+  width: 100vw;
+}
+
+
+// vh
+.vh10 {
+  height: 10vh;
+}
+
+.vh20 {
+  height: 20vh;
+}
+
+.vh30 {
+  height: 30vh;
+}
+
+.vh40 {
+  height: 40vh;
+}
+
+.vh50 {
+  height: 50vh;
+}
+
+.vh60 {
+  height: 60vh;
+}
+
+.vh70 {
+  height: 70vh;
+}
+
+.vh80 {
+  height: 80vh;
+}
+
+.vh90 {
+  height: 90vh;
+}
+
+.vh100 {
+  height: 100vh;
+}
+
+
+// padding
+.p1rem {
+  padding: 1rem;
+}
+
+.p2rem {
+  padding: 2rem;
+}
+
+.p3rem {
+  padding: 3rem;
+}
+
+.p4rem {
+  padding: 4rem;
+}
+
+.p5rem {
+  padding: 5rem;
+}
+
+
+// margin
+.m1rem {
+  margin: 1rem;
+}
+
+.m2rem {
+  margin: 2rem;
+}
+
+.m3rem {
+  margin: 3rem;
+}
+
+.m4rem {
+  margin: 4rem;
+}
+
+.m5rem {
+  margin: 5rem;
+}
+
+.mb1rem {
+  margin-bottom: 1rem;
+}
+
+.mb2rem {
+  margin-bottom: 2rem;
+}
+
+.mb3rem {
+  margin-bottom: 3rem;
+}
+
+.mb4rem {
+  margin-bottom: 4rem;
+}
+
+.mb5rem {
+  margin-bottom: 5rem;
+}
+
+
+// text-align系
+.tac {
+  text-align: center;
+}
+
+.tal {
+  text-align: left;
+}
+
+.tar {
+  text-align: right;
+}

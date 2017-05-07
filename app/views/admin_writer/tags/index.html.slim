@@ -1,0 +1,19 @@
+h1 Listing tags
+
+table
+  thead
+    tr
+
+  tbody
+    - @tags.each do |tag|
+      tr
+        th = tag.name
+        th = tag.desc
+        th = tag.slug
+        td = link_to 'Show', [:admin_writer, tag]
+        td = link_to 'Edit', edit_admin_writer_tag_path(tag)
+        td = link_to 'Destroy', [:admin_writer, tag], data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New tag', new_admin_writer_tag_path

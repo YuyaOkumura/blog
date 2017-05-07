@@ -1,0 +1,12 @@
+p#notice = notice
+
+= @tag.name
+= @tag.desc
+= @tag.slug
+
+
+= link_to 'Edit', edit_admin_writer_tag_path(@tag)
+'  |
+= link_to 'Back', admin_writer_tags_path
+'  |
+= link_to 'Destroy', [:admin_writer, @tag], data: { confirm: 'Are you sure?' }, method: :delete

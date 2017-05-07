@@ -1,0 +1,26 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ * Use Google Style Guide
+ * https://google.github.io/styleguide/htmlcssguide.xml#CSS_Style_Rules
+ * http://qiita.com/Sugima/items/785644372397595644ba
+ *
+ *= require_tree ../../../vendor/assets/stylesheets/.
+ *= require_self
+ */
+
+@import './reset/reset.scss';
+@import './components/variable.scss';
+@import './components/*';
+@import './modules/*';
+@import './controllers/*';
+@import './admin_writer/*';

@@ -1,0 +1,15 @@
+h1 Contact#new
+p Find me in app/views/contact/new.html.slim
+= form_for @contact, remote: true do |f|
+  .form-group
+    p = f.label "お名前をご記入ください(任意)"
+    = f.text_field :user_name
+  .form-group
+    p = f.label "件名(必須)"
+    = f.text_field :title
+  .form-group
+    p = f.label "内容(必須)"
+    = f.text_field :content
+  .actions = f.submit
+
+
