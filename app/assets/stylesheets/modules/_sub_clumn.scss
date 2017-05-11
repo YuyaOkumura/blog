@@ -1,7 +1,15 @@
-.side-container {
+.side-content {
   background: $mainColor;
 }
 
-.side-container-title {
-  color: $accentColor;
+.side-content-title {
+  color: $spotColor;
+}
+
+.side-content-nav {
+  background: $baseColor;
+}
+
+.side-content-nav-title {
+  color: $mediamColor;
 }

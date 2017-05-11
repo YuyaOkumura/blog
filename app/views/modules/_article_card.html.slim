@@ -1,0 +1,13 @@
+.article.pull-left
+  = link_to article_path(article)
+    .article-head.p1rem
+      p.article-title = article.title
+      p = article.created_at
+  .article-body.p1rem
+    - article.article_tags.each do |article_tag|
+      = link_to article_tag.tag.name, tag_path(article_tag.tag.slug), class: 'tag'
+  .article-foot.p1rem
+    p.article-parag
+      = link_to likes_path(like: { article_id: article.id }), method: 'POST'
+        = fa_icon 'heart'
+      = " #{article.likes.count}"

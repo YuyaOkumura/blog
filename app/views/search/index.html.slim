@@ -1,5 +1,4 @@
-h1 Search#index
-p Find me in app/views/search/index.html.slim
 = form_tag search_path, method: :get, enforce_utf8: false do
-  = text_field :search, :search_word
+  = text_field :search, :search_word, value: @search_word
   = submit_tag "検索", :name => nil
+h3.main-section-title = "[ #{@search_word} ] の検索結果です"

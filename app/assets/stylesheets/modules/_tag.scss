@@ -1,0 +1,23 @@
+.tag {
+  position: relative;
+  font-size: 1.5rem;
+  padding: .5rem 1.5rem .5rem .75rem;
+  color: $baseColor;
+  background: $accentColor;
+  border-left: 1rem solid $mediamColor;
+}
+
+.tag::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  right: 0;
+  border-width: 0 0 1rem 1rem;
+  border-style: solid;
+  border-color: $baseColor $spotColor;
+}
+
+// 背景色にあわせる
+.article .tag::after {
+  border-color: $mainColor $spotColor;
+}

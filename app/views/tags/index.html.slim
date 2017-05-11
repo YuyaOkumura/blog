@@ -1,7 +1,6 @@
-h1 Tags#index
-p Find me in app/views/tags/index.html.slim
-- @tags.each do |tag|
-  .tag
-    p = tag.name
-    p = tag.desc
-    p = tag.slug
+section.main-section.p2rem.mb5rem
+  h3.main-section-title タグ一覧
+  p.main-section-parag 現在管理しているタグの一覧です。
+  .clearfix
+    - @tags.each do |tag|
+      = render partial: 'modules/tag', locals: { tag: tag }

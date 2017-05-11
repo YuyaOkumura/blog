@@ -37,3 +37,6 @@ config/database.yml.production.yaml
 db/fixtures/production/*
 
 config/settings/production.yml
+
+# Ignore Public
+public/*

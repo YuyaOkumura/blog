@@ -1,0 +1,24 @@
+.article {
+  width: 30%;
+  margin: 0 calc(10% / 3 / 2) 2rem;
+  background: $mainColor;
+  border-top: 2rem solid $accentColor;
+}
+
+.article-created {
+  color: $mediamColor;
+}
+
+.article-title {
+  font-size: 2rem;
+  color: $spotColor;
+}
+
+.article-parag {
+  font-size: 1.5rem;
+  color: $spotColor;
+}
+
+.article-foot {
+  border-top: 1rem solid $mediamColor;
+}

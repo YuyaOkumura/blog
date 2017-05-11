@@ -7,12 +7,40 @@ body {
   margin: 0 auto;
 }
 
-.sub {
-  width: 20%;
+.breadcrumb {
+  margin-bottom: 2rem;
+  color: $mediamColor;
+  font-size: 1.5rem;
+}
+
+.side {
+  width: 25%;
 }
 
 .main {
   width: 70%;
-  min-height: 80vh;
   background: $mainColor;
+}
+
+.main-section {
+  background: $baseColor;
+}
+
+.main-section-title {
+  font-size: 1.5rem;
+  color: $spotColor;
+}
+
+.main-section-parag {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: $mediamColor;
+}
+
+.btn {
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: $baseColor;
+  background: $accentColor;
+  border-radius: 1rem;
 }

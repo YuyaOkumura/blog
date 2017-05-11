@@ -1,6 +1,7 @@
-h1 Tags#show
-p Find me in app/views/tags/show.html.slim
-.tag
-  p = @tag.name
-  p = @tag.desc
-  p = @tag.slug
+section.main-section.p2rem.mb5rem
+  h3.main-section-title
+    = link_to @tag.name, tag_path(@tag.slug), class: 'tag'
+    = " タグの記事一覧"
+  p.main-section-parag = "#{@tag.name} : #{@tag.desc}"
+  .clearfix
+    = render partial: 'modules/article_cards', locals: { articles: @aritcles }

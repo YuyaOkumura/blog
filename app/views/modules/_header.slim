@@ -1,7 +1,8 @@
 header.header.flex.j-bet.a-center.vh20
   .header-home.vw30
-    h1.header-home-title さいとのたいとる
-    p.header-home-parag さいとのぱらぐらふ
+    = link_to root_path
+      h1.header-home-title さいとのたいとる
+      p.header-home-parag さいとのぱらぐらふ
 
   / ナビ。ここまでモジュール化すると無意味に細かくなるのでモジュール化しない。
   nav.header-nav.vw40
@@ -9,8 +10,8 @@ header.header.flex.j-bet.a-center.vh20
       li.header-nav-list-item
         = link_to 'ホーム', root_path, class: 'header-nav-list-item-link block'
       li.header-nav-list-item
-        = link_to '記事', '/#', class: 'header-nav-list-item-link block'
+        = link_to '記事', articles_path, class: 'header-nav-list-item-link block'
       li.header-nav-list-item
-        = link_to 'お問い合わせ', '/#', class: 'header-nav-list-item-link block'
+        = link_to 'お問い合わせ', new_contact_path, class: 'header-nav-list-item-link block'
       / li.header-nav-list-item
         = link_to 'MENU', '/#', class: 'header-nav-list-item-link block'

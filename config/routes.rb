@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   root to: 'root#root', as: 'root'
 
   # indexアクションにmonthパラメータと値が含まれていれば、その月の投稿を表示する
-  # favoriteパラメータが含まれていればいいね数順に並べて表示する
+  # likeパラメータが含まれていればいいね数順に並べて表示する
   # どちらもついていればそれに対応したページを表示
   resources :articles, only: [:index, :show]
   get '/tags', to: 'tags#index', as: 'tags'
@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   post '/search_suggest', to: 'search#suggest'
   # お問い合わせ機能。入力内容によって遊びたい
   resources :contacts, only: [:new, :create]
+  # いいね作成
+  resources :likes, only: [:create]
 
   namespace :admin_writer do
     root to: 'root#root'
@@ -35,6 +37,6 @@ Rails.application.routes.draw do
     end
     resources :tags
     # ゼロイチが終わったら実装
-    resources :favorites, only: [:index, :destroy]
+    resources :likes, only: [:index, :destroy]
   end
 end

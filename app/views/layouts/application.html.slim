@@ -9,8 +9,11 @@ html
   body
     .container
       = render 'modules/header'
-      .flex.j-bet
-        aside.sub
-          = render 'modules/sub_clumn'
-        main.main
+      .flex.j-bet.a-base
+        aside.side
+          = render 'modules/side_clumn'
+        main.main.p2rem
+          .breadcrumb
+            = render_breadcrumbs :separator => ' > '
           = yield
+    = render 'modules/footer'

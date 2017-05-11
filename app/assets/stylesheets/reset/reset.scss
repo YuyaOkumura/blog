@@ -6,7 +6,6 @@
   padding: 0;
   box-sizing: border-box;
   font-weight: normal;
-  font-family: "Hiragino Kaku Gothic Pro", YuGothic, sans-serif;
 }
 
 html,
@@ -17,18 +16,18 @@ body {
 li {
   list-style: none;
   list-style-position: inside;
+  font-family: "Hiragino Kaku Gothic Pro", YuGothic, sans-serif;
 }
 
 a {
-  display: block;
   text-decoration: none;
-  color: #000;
+  color: $accentColor;
 }
 
 input {
   outline: none;
   border: none;
-  -webkit-appearance: none;
+  // -webkit-appearance: none;
 }
 
 address {

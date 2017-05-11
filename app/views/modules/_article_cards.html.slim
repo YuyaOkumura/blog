@@ -1,0 +1,5 @@
+- articles.each_with_index do |article, i|
+  / 高さが合わない要素についてfloatが崩れないように.clearを差し込んでいる
+  - if i % 3 == 0
+    .clear
+  = render partial: 'modules/article_card', locals: { article: article }

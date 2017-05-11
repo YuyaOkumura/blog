@@ -1,13 +1,15 @@
 // 基本情報
 $containerWidth: 1024px; //のちにレスポンシブ対応する
 
-
 // 配色
-// ベース、メイン、アクセント
+// ベース、メイン、アクセント、スポット
 $baseColor: #222831;
 $mainColor: #393e46;
 $accentColor: #49bcbc;
-$spotColor: #eeeeee;
+$spotColor: #dddddd;
 
 // 明度管理
-$darkTextColor: #888;
+$mediamColor: #888888;
+
+// 透明色
+$clearColor: rgba(0, 0, 0, 0);

@@ -18,9 +18,10 @@
  *= require_self
  */
 
-@import './reset/reset.scss';
 @import './components/variable.scss';
+@import './reset/reset.scss';
 @import './components/*';
 @import './modules/*';
 @import './controllers/*';
 @import './admin_writer/*';
+@import 'font-awesome';

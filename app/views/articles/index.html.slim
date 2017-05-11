@@ -1,7 +1,6 @@
-h1 Articles#index
-p Find me in app/views/articles/index.html.slim
-- @articles.each do |article|
-  .article
-    p = article.title
-    p = article.content
-    p = article.user_id
+= page_entries_info @articles
+section.main-section.p2rem.mb5rem
+  h3.main-section-title = @notice
+  .clearfix
+    = render partial: 'modules/article_cards', locals: { articles: @articles }
+= paginate @articles

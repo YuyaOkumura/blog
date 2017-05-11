@@ -54,14 +54,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'config'
-
+# シードデータ
 gem 'seed-fu', '~> 2.3'
-
+# 認証系
 gem 'devise'
-
-gem 'slim-rails'
-
-gem 'bootstrap-sass'
 
 gem 'aws-sdk'
 # 画像処理とアップロード
@@ -71,10 +67,14 @@ gem 'paperclip', '~> 5.0'
 # 画像の最適化
 gem 'image_optim'
 gem 'image_optim_pack'
-
 # Slackの通知管理
 gem 'slack-notifier'
-
+# 1対多formの構築
 gem 'cocoon'
-
+# フロント
+gem 'bootstrap-sass'
 gem 'kaminari'
+gem 'slim-rails'
+gem 'font-awesome-rails'
+# パンくず
+gem 'breadcrumbs_on_rails'
