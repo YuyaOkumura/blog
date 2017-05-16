@@ -78,3 +78,6 @@ gem 'slim-rails'
 gem 'font-awesome-rails'
 # パンくず
 gem 'breadcrumbs_on_rails'
+# markdown対応
+gem 'redcarpet', '~> 2.3.0'
+gem 'coderay'
