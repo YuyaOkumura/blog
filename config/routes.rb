@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   # お問い合わせ機能。入力内容によって遊びたい
   resources :contacts, only: [:new, :create]
   # いいね作成
-  resources :likes, only: [:create]
+  post '/likes', to: 'likes#change_like'
 
   namespace :admin_writer do
     root to: 'root#root'

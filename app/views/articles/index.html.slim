@@ -1,6 +1,6 @@
-= page_entries_info @articles
 section.main-section.p2rem.mb5rem
   h3.main-section-title = @notice
+  = paginate @articles
   .clearfix
     = render partial: 'modules/article_cards', locals: { articles: @articles }
-= paginate @articles
+  = paginate @articles

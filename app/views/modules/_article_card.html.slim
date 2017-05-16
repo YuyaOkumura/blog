@@ -8,6 +8,5 @@
       = link_to article_tag.tag.name, tag_path(article_tag.tag.slug), class: 'tag'
   .article-foot.p1rem
     p.article-parag
-      = link_to likes_path(like: { article_id: article.id }), method: 'POST'
-        = fa_icon 'heart'
-      = " #{article.likes.count}"
+      = fa_icon 'heart', class: 'like', data_id: article.id
+      span.like-count = " #{article.likes.count}"

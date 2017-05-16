@@ -39,15 +39,9 @@ ActiveRecord::Schema.define(version: 20170508004237) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "article_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_favorites_on_article_id", using: :btree
-  end
-
   create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "article_id"
+    t.string   "user_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_likes_on_article_id", using: :btree
@@ -81,6 +75,5 @@ ActiveRecord::Schema.define(version: 20170508004237) do
   add_foreign_key "article_tags", "articles"
   add_foreign_key "article_tags", "tags"
   add_foreign_key "articles", "users"
-  add_foreign_key "favorites", "articles"
   add_foreign_key "likes", "articles"
 end

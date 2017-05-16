@@ -1,5 +1,5 @@
 tags = [
-  { name: "Rail4", slug: "rails4" },
+  { name: "Rails", slug: "rails" },
   { name: "C", slug: "c" },
   { name: "ロードバランサー", slug: "loadblancer" },
   { name: "JavaScript", slug: "javascript" },

@@ -31,6 +31,9 @@ class ArticlesController < ApplicationController
       @articles = []
       @notice = "エラーがあります。正しく描画されませんでした。"
     end
+    if params[:page].present?
+      add_breadcrumb "#{params[:page]}ページ目", articles_path(page: params[:page])
+    end
   end
 
   def show

@@ -1,13 +1,18 @@
 class LikesController < ApplicationController
 
-  def create
+  def change_like
     like = Like.new(like_params)
+    like.update(user_token: current_user_token)
     if like.save
-      result = like
+      result = Article.find_by(params[:article_id]).likes.count
+      status = 'create'
     else
-      result = nil
+      like = Like.find_by(like_params, user_token: current_user_token)
+      like.destroy
+      result = Article.find_by(params[:article_id]).likes.count
+      status = 'destroy'
     end
-    render json: result
+    render json: [result, status]
   end
 
   private

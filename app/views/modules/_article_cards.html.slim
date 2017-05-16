@@ -3,3 +3,5 @@
   - if i % 3 == 0
     .clear
   = render partial: 'modules/article_card', locals: { article: article }
+  - if (articles.count - 1) == i
+    .clear
