@@ -1,4 +1,18 @@
-= form_tag search_path, method: :get, enforce_utf8: false do
-  = text_field :search, :search_word, value: @search_word
-  = submit_tag "検索", :name => nil
-h3.main-section-title = "[ #{@search_word} ] の検索結果です"
+.search
+  = form_tag search_path, method: :get, enforce_utf8: false do
+    = text_field :search, :search_word, value: @search_word
+    = submit_tag "検索", :name => nil
+  h3.main-section-title = "[ #{@search_word} ] の検索結果です"
+  h4 記事
+  - if @searched_articles.blank?
+    p 該当の検索結果はありませんでした
+  - else
+    .clearfix
+      = render partial: 'modules/article_cards', locals: { articles: @searched_articles }
+  h4 タグ
+  - if @searched_tags.blank?
+    p 該当の検索結果はありませんでした
+  - else
+    .clearfix
+      - @searched_tags.each do |search_tag|
+        = render partial: 'modules/tag', locals: { tag: search_tag }
