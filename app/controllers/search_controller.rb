@@ -5,13 +5,24 @@ class SearchController < ApplicationController
   def index
     search_words = get_search_words
     @searched_articles, @searched_tags = get_searched_articles(search_words)
+    if @searched_articles.blank?
+      @article_notice = "記事は存在しませんでした"
+    else
+      @article_notice = "記事の検索結果です"
+    end
+    if @searched_tags.blank?
+      @tag_notice = "タグは存在しませんでした"
+    else
+      @tag_notice = "タグの検索結果です"
+    end
   end
 
   def suggest
     search_words = get_search_words
     searched_articles, searched_tags = get_searched_articles(search_words)
-    @suggest_articles = searched_articles.pluck(:title)
-    @suggest_tags = searched_tags.pluck(:name)
+    suggest_articles = searched_articles.pluck(:title)
+    suggest_tags = searched_tags.pluck(:name)
+    render json: [suggest_articles, suggest_tags]
   end
 
   private
