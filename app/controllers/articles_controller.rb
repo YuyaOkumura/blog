@@ -20,13 +20,11 @@ class ArticlesController < ApplicationController
     elsif params[:like] == 'true'
       # Kaminari.paginate_array : arrayに対してkaminariのページネーションをするためにarrayを加工
       @articles = Kaminari.paginate_array(
-        articles.where(created_at: get_current_month(params[:year_month]))
-                .sort_by { |article| -(article.likes.count) }
+        articles.sort_by { |article| -(article.likes.count) }
       ).page(params[:page])
       @notice = "記事一覧 : 人気順"
     # 月ごとの投稿
     elsif params[:year_month].present?
-      # どっかにライブラリ作って key = 月, value = DateTime.all_month のやつを作りそれを参照して呼ぼう
       @articles = articles.where(created_at: get_current_month(params[:year_month]))
                           .order("created_at DESC")
                           .page(params[:page])
