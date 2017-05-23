@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get '/:slug', to: 'tags#show', constraints: TagSlugConstraints.new, as: 'tag'
   # tagもarticleも同時に検索する
   get '/search', to: 'search#index', as: 'search'
-  post '/search_suggest', to: 'search#suggest'
+  get '/suggest', to: 'search#suggest', as: 'suggest'
   # お問い合わせ機能。入力内容によって遊びたい
   resources :contacts, only: [:new, :create]
   # いいね作成

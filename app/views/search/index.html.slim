@@ -1,9 +1,9 @@
 section.main-section.p2rem.mb5rem
   = form_tag search_path, method: :get, enforce_utf8: false do
-    = text_field :search, :search_word, value: @search_word
+    = autocomplete_field_tag :search_word, @search_word, suggest_path, class: 'form-control', placeholder: '入力してください'
     = submit_tag "検索", :name => nil
   h3.main-section-title
-    = "[ #{@search_word} ] の検索結果です"
+    = "[ #{@search_word} ] を含む検索結果です"
     br
     = "記事とタグを検索します"
   p.main-section-parag = @article_notice

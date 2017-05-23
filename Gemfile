@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
+gem "jquery-ui-rails"
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
@@ -81,3 +82,5 @@ gem 'breadcrumbs_on_rails'
 # markdown対応
 gem 'redcarpet', '~> 2.3.0'
 gem 'coderay'
+# 検索機能のサジェスト
+gem 'rails4-autocomplete'
