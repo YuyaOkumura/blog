@@ -8,5 +8,4 @@
       = link_to article_tag.tag.name, tag_path(article_tag.tag.slug), class: 'tag'
   .article-foot.p1rem
     p.article-parag
-      = fa_icon 'heart', class: 'like', data_id: article.id
-      span.like-count = " #{article.likes.count}"
+      = render partial: 'modules/like', locals: { article: article }

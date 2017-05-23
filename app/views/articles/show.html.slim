@@ -2,7 +2,6 @@ h3.article-title
   = @article.title
 p.article-created.mb4rem = @article.created_at
 p.article-parag
-  = fa_icon 'heart', class: 'like', data_id: @article.id
-  span.like-count = " #{@article.likes.count}"
+  = render partial: 'modules/like', locals: { article: @article }
 .markdown.mt2rem
   = markdown(@article.content).html_safe
