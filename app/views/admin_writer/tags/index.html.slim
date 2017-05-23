@@ -1,19 +1,21 @@
-h1 Listing tags
+h2 タグ管理
+= link_to 'New tag', new_admin_writer_tag_path, class: 'btn mb2rem'
 
-table
+table.table.table-striped
   thead
     tr
-
+      th 名前
+      th 説明文
+      th url
+      th リンク
+      th
+      th
   tbody
     - @tags.each do |tag|
       tr
-        th = tag.name
-        th = tag.desc
-        th = tag.slug
-        td = link_to 'Show', [:admin_writer, tag]
-        td = link_to 'Edit', edit_admin_writer_tag_path(tag)
-        td = link_to 'Destroy', [:admin_writer, tag], data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New tag', new_admin_writer_tag_path
+        td = tag.name
+        td = tag.desc.truncate(50, omission: '・・・')
+        td = tag.slug
+        td = link_to 'Show', [:admin_writer, tag], class: 'btn'
+        td = link_to 'Edit', edit_admin_writer_tag_path(tag), class: 'btn'
+        td = link_to 'Destroy', [:admin_writer, tag], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn'

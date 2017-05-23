@@ -1,8 +1,5 @@
-h1 Editing article
-
+h1 タグ編集
+.mb2rem
+  = link_to 'Back', admin_writer_tags_path, class: 'btn mr2rem'
+  = link_to 'Show', [:admin_writer, @tag], class: 'btn'
 == render 'form'
-
-= link_to 'Show', [:admin_writer, @tag]
-'  |
-= link_to 'Back', admin_writer_tags_path
-
