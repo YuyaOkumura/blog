@@ -1,0 +1,5 @@
+- if Like.find_by(article_id: article.id, user_token: current_user_token).present?
+  = fa_icon 'heart', class: 'like disable', data_id: article.id
+- else
+  = fa_icon 'heart', class: 'like able', data_id: article.id
+span.like-count = " #{article.likes.count}"
