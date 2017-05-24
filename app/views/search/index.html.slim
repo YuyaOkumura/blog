@@ -1,7 +1,9 @@
 section.main-section.p2rem.mb5rem
   = form_tag search_path, method: :get, enforce_utf8: false do
-    = autocomplete_field_tag :search_word, @search_word, suggest_path, class: 'form-control', placeholder: '入力してください'
-    = submit_tag "検索", :name => nil
+    .flex
+      = autocomplete_field_tag :search_word, @search_word, suggest_path, class: 'form-control search-form', placeholder: '入力してください'
+      = button_tag type: 'submit', class: 'search-submit' do
+          = fa_icon 'search'
   h3.main-section-title
     = "[ #{@search_word} ] を含む検索結果です"
     br
