@@ -7,13 +7,20 @@ table {
   border: 2rem solid $mediamColor;
   font-size: 1.5rem;
 }
+
 td {
   max-width: 150px;
   word-wrap: break-word;
 }
+
 a.btn, a.btn:link, a.btn:visited {
   color: $whiteColor;
 }
+
 td img {
   width: 100%;
+}
+
+p {
+  font-size: 1.5rem;
 }
