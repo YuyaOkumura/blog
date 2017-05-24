@@ -18,3 +18,9 @@ header.header.flex.j-bet.a-center.vh20
       = link_to admin_writer_root_path
         h1.header-home-title さいとの管理画面
         p.header-home-parag かんりがめんだぜ〜
+    nav.header-nav.vw40
+      ul.admin-header-nav-list.flex.tac
+        li.header-nav-list-item
+          = link_to '記事管理', admin_writer_articles_path, class: 'header-nav-list-item-link block'
+        li.header-nav-list-item
+          = link_to 'タグ管理', admin_writer_tags_path, class: 'header-nav-list-item-link block'
