@@ -1,19 +1,22 @@
-h1 Listing articles
+h2 記事管理
 
-table
+= link_to 'New Article', new_admin_writer_article_path, class: 'btn mb2rem'
+table.table.table-striped
   thead
     tr
+      th 記事名
+      th 内容
+      th 投稿user
+      th リンク
+      th
+      th
 
   tbody
     - @articles.each do |article|
       tr
-        th = article.title
-        th = article.content
-        th = article.user_id
-        td = link_to 'Show', [:admin_writer, article]
-        td = link_to 'Edit', edit_admin_writer_article_path(article)
-        td = link_to 'Destroy', [:admin_writer, article], data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Article', new_admin_writer_article_path
+        td = article.title
+        td = article.content.truncate(50, omission: '・・・')
+        td = article.user_id
+        td = link_to 'Show', [:admin_writer, article], class: 'btn'
+        td = link_to 'Edit', edit_admin_writer_article_path(article), class: 'btn'
+        td = link_to 'Destroy', [:admin_writer, article], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn'

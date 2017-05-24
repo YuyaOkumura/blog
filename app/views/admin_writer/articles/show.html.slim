@@ -1,12 +1,18 @@
-p#notice = notice
+h2 = @article.title
 
-= @article.title
-= @article.content
-= @article.user_id
+.mb2rem
+  = link_to 'Edit', edit_admin_writer_article_path(@article), class: 'btn mr2rem'
+  = link_to 'Back', admin_writer_articles_path, class: 'btn mr2rem'
+  = link_to 'Destroy', [:admin_writer, @article], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn mr2rem'
 
-
-= link_to 'Edit', edit_admin_writer_article_path(@article)
-'  |
-= link_to 'Back', admin_writer_articles_path
-'  |
-= link_to 'Destroy', [:admin_writer, @article], data: { confirm: 'Are you sure?' }, method: :delete
+table.table.table-striped
+  thead
+    tr
+      th タイトル
+      th 内容
+      th 投稿者id
+  tbody
+    tr
+      td = @article.title
+      td = @article.content
+      td = @article.user_id

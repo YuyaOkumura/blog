@@ -15,13 +15,14 @@
  * http://qiita.com/Sugima/items/785644372397595644ba
  *
  *= require jquery-ui
+ *= require bootstrap.min
  *= require_self
  */
 
-@import './components/variable.scss';
-@import './reset/reset.scss';
-@import './components/*';
-@import './modules/*';
-@import './controllers/*';
-@import './admin_writer/*';
+@import '../components/variable.scss';
+@import '../reset/reset.scss';
+@import '../components/*';
+@import '../modules/*';
+@import '../controllers/*';
+@import './notitle.scss';
 @import 'font-awesome';

@@ -1,0 +1,22 @@
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid $mediamColor;
+  font-size: 1.5rem;
+}
+textarea {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid $mediamColor;
+}
+
+.form {}
+.form-control,
+.form-submit {
+  margin-top: 20px;
+}

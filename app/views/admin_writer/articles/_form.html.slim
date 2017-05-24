@@ -7,13 +7,14 @@
           li = message
 
   = f.hidden_field :user_id, value: current_user.id
-  .form-group
-    p = f.label :is_public
-    = f.check_box :is_public, {}, true, false
+  = f.label :is_public
+  .checkbox
+    label
+      = f.check_box :is_public, {}, true, false
   .form-group
     p = f.label :title
-    = f.text_field :title
+    = f.text_field :title, class: 'form-controll'
   .form-group
     p = f.label :content
-    = f.text_area :content
-  .actions = f.submit
+    = f.text_area :content, class: 'form-controll'
+  .actions = f.submit '送信', class: 'btn'

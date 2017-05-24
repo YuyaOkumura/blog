@@ -36,7 +36,5 @@ Rails.application.routes.draw do
       post 'preview', on: :collection
     end
     resources :tags
-    # ゼロイチが終わったら実装
-    resources :likes, only: [:index, :destroy]
   end
 end

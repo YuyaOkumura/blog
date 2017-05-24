@@ -1,12 +1,18 @@
-p#notice = notice
+h2 = @tag.name
 
-= @tag.name
-= @tag.desc
-= @tag.slug
+.mb2rem
+  = link_to 'Edit', edit_admin_writer_tag_path(@tag), class: 'btn mr2rem'
+  = link_to 'Back', admin_writer_tags_path, class: 'btn mr2rem'
+  = link_to 'Destroy', [:admin_writer, @tag], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn'
 
-
-= link_to 'Edit', edit_admin_writer_tag_path(@tag)
-'  |
-= link_to 'Back', admin_writer_tags_path
-'  |
-= link_to 'Destroy', [:admin_writer, @tag], data: { confirm: 'Are you sure?' }, method: :delete
+table.table.table-striped
+  thead
+    tr
+      th 名前
+      th 説明文
+      th url
+  tbody
+    tr
+      td = @tag.name
+      td = @tag.desc
+      td = @tag.slug
