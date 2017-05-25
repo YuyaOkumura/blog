@@ -6,6 +6,10 @@
   background: $accentColor;
 }
 
+.article .tag {
+  margin-right: 1rem;
+}
+
 .tag::after {
   content: "";
   position: absolute;
