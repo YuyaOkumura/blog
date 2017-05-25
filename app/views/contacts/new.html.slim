@@ -1,4 +1,4 @@
-.main-section.p2rem.mb5rem
+section.main-section
   h3.main-section-title お問い合わせ
   p.main-section-parag
     = 'ご意見、ご感想などをお寄せください。'
@@ -6,11 +6,11 @@
     = 'わんちゃん実装まであります。'
   = form_for @contact, remote: true do |f|
     .form-group
-      = f.text_field :user_name, class: 'form-control', placeholder: 'お名前をご記入ください(任意)'
+      = f.text_field :user_name, class: 'form-control contact-form', placeholder: 'お名前をご記入ください(任意)'
     .form-group
-      = f.text_field :title, class: 'form-control', placeholder: '件名(必須)'
+      = f.text_field :title, class: 'form-control contact-form', placeholder: '件名(必須)'
     .form-group
-      = f.text_field :content, class: 'form-control', placeholder: '内容(必須)'
+      = f.text_field :content, class: 'form-control contact-form', placeholder: '内容(必須)'
     .actions = f.submit '送信', class: 'form-submit'
 
 

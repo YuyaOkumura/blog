@@ -1,0 +1,56 @@
+.admin-tag-form-container {
+  margin-top: wrem;
+}
+
+.admin-tag-form {
+  display: flex;
+  align-items: center;
+}
+
+.admin-tag-form-field {
+  width: 20%;
+}
+
+.admin-tag-btn {
+  margin-left: 40px;
+}
+
+.admin-tag-preview {
+  margin-top: 10px;
+}
+
+.admin-tag-notice {
+  color: #38a;
+}
+
+.admin-tag-area {
+  padding: 1rem 0;
+}
+
+.admin-tag {
+  position: relative;
+  margin-right: 10px;
+  padding: 5px 20px;
+  border: 2px solid #8cf;
+  border-radius: 5px;
+  color: #38a;
+  background: #adf;
+}
+
+.admin-tag-remove {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #38a;
+}
+
+.admin-tag-remove > a {
+  text-decoration: none;
+  color: #8cf;
+}

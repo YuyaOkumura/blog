@@ -1,12 +1,12 @@
-header.header.flex.j-bet.a-center.vh20
+header.header
   - unless request.url.include?('admin_writer')
-    .header-home.vw30
+    .header-home
       = link_to root_path
         h1.header-home-title さいとのたいとる
         p.header-home-parag さいとのぱらぐらふ
     / ナビ。ここまでモジュール化すると無意味に細かくなるのでモジュール化しない。
-    nav.header-nav.vw40
-      ul.header-nav-list.flex.tac
+    nav.header-nav
+      ul.header-nav-list
         li.header-nav-list-item
           = link_to 'ホーム', root_path, class: 'header-nav-list-item-link block'
         li.header-nav-list-item
@@ -14,13 +14,13 @@ header.header.flex.j-bet.a-center.vh20
         li.header-nav-list-item
           = link_to 'お問い合わせ', new_contact_path, class: 'header-nav-list-item-link block'
   - else
-    .header-home.vw30
+    .header-home
       = link_to admin_writer_root_path
         h1.header-home-title さいとの管理画面
         p.header-home-parag かんりがめんだぜ〜
-    nav.header-nav.vw40
-      ul.admin-header-nav-list.flex.tac
-        li.header-nav-list-item
+    nav.header-nav
+      ul.header-nav-list.admin-header-nav-list
+        li.header-nav-list-item.admin-header-nav-list-item
           = link_to '記事管理', admin_writer_articles_path, class: 'header-nav-list-item-link block'
-        li.header-nav-list-item
+        li.header-nav-list-item.admin-header-nav-list-item
           = link_to 'タグ管理', admin_writer_tags_path, class: 'header-nav-list-item-link block'

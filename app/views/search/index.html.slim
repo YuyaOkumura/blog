@@ -1,4 +1,4 @@
-section.main-section.p2rem.mb5rem
+section.main-section
   = form_tag search_path, method: :get, enforce_utf8: false do
     .flex
       = autocomplete_field_tag :search_word, @search_word, suggest_path, class: 'form-control search-form', placeholder: '入力してください'

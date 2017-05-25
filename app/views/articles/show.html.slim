@@ -1,7 +1,7 @@
 h3.article-title
   = @article.title
-p.article-created.mb4rem = @article.created_at
+p.article-created = @article.created_at
 p.article-parag
   = render partial: 'modules/like', locals: { article: @article }
-.markdown.mt2rem
+.markdown
   = markdown(@article.content).html_safe

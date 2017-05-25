@@ -1,5 +1,5 @@
 h1 タグ編集
 .mb2rem
-  = link_to 'Back', admin_writer_tags_path, class: 'btn mr2rem'
-  = link_to 'Show', [:admin_writer, @tag], class: 'btn'
+  = link_to 'もどる', admin_writer_tags_path, class: 'btn btn-info mr2rem'
+  = link_to '詳細', [:admin_writer, @tag], class: 'btn btn-info'
 == render 'form'

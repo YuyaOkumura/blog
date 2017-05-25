@@ -10,7 +10,6 @@ body {
 .breadcrumb {
   margin-bottom: 2rem;
   color: $mediamColor;
-  font-size: 1.5rem;
 }
 
 .side {
@@ -19,28 +18,21 @@ body {
 
 .main {
   width: 70%;
+  padding: 1rem;
   background: $mainColor;
 }
 
 .main-section {
+  margin-bottom: 2rem;
+  padding: 1rem;
   background: $baseColor;
 }
 
 .main-section-title {
-  font-size: 1.5rem;
   color: $spotColor;
 }
 
 .main-section-parag {
   margin-bottom: 1rem;
-  font-size: 1.5rem;
   color: $mediamColor;
-}
-
-.btn {
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: $baseColor;
-  background: $accentColor;
-  border-radius: 1rem;
 }

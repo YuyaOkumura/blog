@@ -1,23 +1,22 @@
-.side-content.p2rem.mb5rem
+.side-content
   h2.side-content-title 記事を探す
-  nav.side-content-nav.p2rem.mb2rem
+  nav.side-content-nav
     h3.side-content-nav-title 検索して探す
     = form_tag search_path, method: 'GET', enforce_utf8: false, class: 'flex' do
       = autocomplete_field_tag :search_word, '', suggest_path, class: 'form-control', placeholder: '検索'
       = button_tag type: 'submit', class: 'search-submit' do
         = fa_icon 'search'
-  nav.side-content-nav.p2rem.mb2rem
+  nav.side-content-nav
     h3.side-content-nav-title タグから探す(記事数上位5件)
     .clearfix
       - @default_tags.each do |default_tag|
         = render partial: 'modules/tag', locals: { tag: default_tag }
-    .tac.mt2rem
-      = link_to 'MORE', tags_path, class: 'btn'
-  nav.side-content-nav.p2rem.mb2rem
+    = render partial: 'modules/more_btn', locals: { path: tags_path }
+  nav.side-content-nav
     h3.side-content-nav-title カレンダーから探す
     .clearfix
       - @archives.each do |archive, count|
         .archive
           = link_to "#{year_month_conversion(archive)} (#{count})", articles_path(year_month: archive)
-.side-content.p2rem.mb5rem
+.side-content
   h2.side-content-title 書いてる人

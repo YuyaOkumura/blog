@@ -1,11 +1,12 @@
 h2 記事管理
 
-= link_to 'New Article', new_admin_writer_article_path, class: 'btn mb2rem'
+= link_to '記事作成', new_admin_writer_article_path, class: 'btn btn-info mb2rem'
 table.table.table-striped
   thead
     tr
       th 記事名
       th 内容
+      th 関連タグ
       th 投稿user
       th リンク
       th
@@ -16,7 +17,13 @@ table.table.table-striped
       tr
         td = article.title
         td = article.content.truncate(50, omission: '・・・')
+        - if article.article_tags.present?
+          td
+            - article.tags.each do |tag|
+              = "#{tag.name}　"
+        - else
+          td 未登録
         td = article.user_id
-        td = link_to 'Show', [:admin_writer, article], class: 'btn'
-        td = link_to 'Edit', edit_admin_writer_article_path(article), class: 'btn'
-        td = link_to 'Destroy', [:admin_writer, article], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn'
+        td = link_to '詳細', [:admin_writer, article], class: 'btn btn-info'
+        td = link_to '編集', edit_admin_writer_article_path(article), class: 'btn btn-info'
+        td = link_to '削除', [:admin_writer, article], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'

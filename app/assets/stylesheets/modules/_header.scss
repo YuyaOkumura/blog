@@ -1,17 +1,36 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
 .header-home-title {
-  font-size: 3rem;
+  width: 30vw;
+  font-size: 2rem;
   border-bottom: 1px solid;
   color: $accentColor;
 }
 
 .header-home-parag {
-  font-size: 1.5rem;
   color: $mediamColor;
 }
 
+.header-nav {
+  width: 40vw;
+}
+
 .header-nav-list {
+  display: flex;
+  text-align: center;
   background: $mainColor;
 }
+
+// admin=====
+.admin-header-nav-list {
+  background: none;
+}
+// =====
 
 .header-nav-list-item {
   width: calc(100% / 3);
@@ -21,9 +40,14 @@
   background: $baseColor;
 }
 
+// admin=====
+.admin-header-nav-list-item:hover {
+  background: $mediamColor;
+}
+// =====
+
 .header-nav-list-item-link {
-  font-size: 1.5rem;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   color: $accentColor;
 }
 

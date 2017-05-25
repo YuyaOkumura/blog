@@ -1,5 +1,5 @@
 h2 タグ管理
-= link_to 'New tag', new_admin_writer_tag_path, class: 'btn mb2rem'
+= link_to 'タグ作成', new_admin_writer_tag_path, class: 'btn btn-info mb2rem'
 
 table.table.table-striped
   thead
@@ -16,6 +16,6 @@ table.table.table-striped
         td = tag.name
         td = tag.desc.truncate(50, omission: '・・・')
         td = tag.slug
-        td = link_to 'Show', [:admin_writer, tag], class: 'btn'
-        td = link_to 'Edit', edit_admin_writer_tag_path(tag), class: 'btn'
-        td = link_to 'Destroy', [:admin_writer, tag], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn'
+        td = link_to '詳細', [:admin_writer, tag], class: 'btn btn-info'
+        td = link_to '編集', edit_admin_writer_tag_path(tag), class: 'btn btn-info'
+        td = link_to '削除', [:admin_writer, tag], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'

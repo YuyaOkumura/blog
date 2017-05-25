@@ -4,12 +4,12 @@
 
 table {
   width: 100%;
+  font-size: 1rem;
   border: 2rem solid $mediamColor;
-  font-size: 1.5rem;
 }
 
 td {
-  max-width: 150px;
+  min-width: 100px;
   word-wrap: break-word;
 }
 
@@ -19,8 +19,4 @@ a.btn, a.btn:link, a.btn:visited {
 
 td img {
   width: 100%;
-}
-
-p {
-  font-size: 1.5rem;
 }

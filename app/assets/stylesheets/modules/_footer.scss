@@ -1,8 +1,13 @@
 .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 1rem 0;
   background: $mainColor;
 }
 
 .footer-copy {
-  font-size: 1.5rem;
+  font-size: .7rem;
   color: $mediamColor;
 }
