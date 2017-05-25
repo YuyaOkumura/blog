@@ -1,9 +1,7 @@
 h2 = @article.title
 
 .mb2rem
-  = link_to 'Edit', edit_admin_writer_article_path(@article), class: 'btn mr2rem'
-  = link_to 'Back', admin_writer_articles_path, class: 'btn mr2rem'
-  = link_to 'Destroy', [:admin_writer, @article], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn mr2rem'
+  = link_to 'もどる', admin_writer_articles_path, class: 'btn btn-info mr2rem'
 
 table.table.table-striped
   thead
@@ -11,8 +9,12 @@ table.table.table-striped
       th タイトル
       th 内容
       th 投稿者id
+      th リンク
+      th
   tbody
     tr
       td = @article.title
       td = @article.content
       td = @article.user_id
+      td = link_to '編集', edit_admin_writer_article_path(@article), class: 'btn btn-info mr2rem'
+      td = link_to '削除', [:admin_writer, @article], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger mr2rem'

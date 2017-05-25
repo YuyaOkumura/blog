@@ -39,6 +39,13 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
   end
 
   def tag_check
+    tag = Tag.where(name: tag_name_params[:tag_name])
+    if tag.present?
+      result = tag
+    else
+      result = false
+    end
+    render json: result
   end
 
   def preview
@@ -50,10 +57,19 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:user_id, :title, :content, :is_public)
+      params.require(:article).permit(:title,
+                                      :content,
+                                      :user_id,
+                                      article_tags_attributes: [
+                                        :id,
+                                        :article_id,
+                                        :tag_id,
+                                        :_destroy
+                                      ]
+      )
     end
 
-    def tag_params
+    def tag_name_params
       params.require(:article).permit(:tag_name)
     end
 end

@@ -1,0 +1,6 @@
+.nested-fields.admin-tag.pull-left
+  - if f.object.tag.present?
+    p.m0 = f.object.tag.name
+  = f.hidden_field :tag_id, class: 'admin-tag-id-field'
+  .admin-tag-remove
+    = link_to_remove_association '✕', f

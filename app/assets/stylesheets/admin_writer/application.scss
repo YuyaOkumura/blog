@@ -14,8 +14,8 @@
  * https://google.github.io/styleguide/htmlcssguide.xml#CSS_Style_Rules
  * http://qiita.com/Sugima/items/785644372397595644ba
  *
- *= require jquery-ui
  *= require bootstrap.min
+ *= require jquery-ui
  *= require_self
  */
 
@@ -23,6 +23,5 @@
 @import '../reset/reset.scss';
 @import '../components/*';
 @import '../modules/*';
-@import '../controllers/*';
 @import './notitle.scss';
 @import 'font-awesome';

@@ -1,9 +1,7 @@
 h2 = @tag.name
 
 .mb2rem
-  = link_to 'Edit', edit_admin_writer_tag_path(@tag), class: 'btn mr2rem'
-  = link_to 'Back', admin_writer_tags_path, class: 'btn mr2rem'
-  = link_to 'Destroy', [:admin_writer, @tag], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn'
+  = link_to 'もどる', admin_writer_tags_path, class: 'btn btn-info mr2rem'
 
 table.table.table-striped
   thead
@@ -11,8 +9,12 @@ table.table.table-striped
       th 名前
       th 説明文
       th url
+      th リンク
+      th
   tbody
     tr
       td = @tag.name
       td = @tag.desc
       td = @tag.slug
+      td = link_to '編集', edit_admin_writer_tag_path(@tag), class: 'btn btn-info mr2rem'
+      td = link_to '削除', [:admin_writer, @tag], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'

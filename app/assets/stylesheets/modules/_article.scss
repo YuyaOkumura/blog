@@ -1,24 +1,33 @@
 .article {
   width: 30%;
-  margin: 0 calc(10% / 3 / 2) 2rem;
+  margin: 0 calc(10% / 3 / 2) 1rem;
+  border-top: 1rem solid $accentColor;
   background: $mainColor;
-  border-top: 2rem solid $accentColor;
 }
 
 .article-created {
+  margin-bottom: 2rem;
   color: $mediamColor;
 }
 
 .article-title {
-  font-size: 2rem;
-  color: $spotColor;
-}
-
-.article-parag {
   font-size: 1.5rem;
   color: $spotColor;
 }
 
+.article-parag {
+  color: $spotColor;
+}
+
+.article-head {
+ padding: .5rem;
+}
+
+.article-body {
+  padding: .5rem;
+}
+
 .article-foot {
+  padding: .5rem;
   border-top: 1rem solid $mediamColor;
 }
