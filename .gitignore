@@ -23,6 +23,12 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+# Capistrano
+
+config/deploy/*
+config/unicorn/*
+config/deploy.rb
+
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
