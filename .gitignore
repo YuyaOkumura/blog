@@ -26,7 +26,6 @@
 # Capistrano
 
 config/deploy/*
-config/unicorn/*
 config/deploy.rb
 
 config/settings.local.yml
