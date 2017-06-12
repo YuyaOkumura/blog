@@ -59,6 +59,7 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
     def article_params
       params.require(:article).permit(:title,
                                       :content,
+                                      :is_public,
                                       :user_id,
                                       article_tags_attributes: [
                                         :id,
