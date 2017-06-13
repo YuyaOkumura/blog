@@ -24,7 +24,6 @@
 .byebug_history
 
 # Capistrano
-
 config/deploy/*
 config/deploy.rb
 
