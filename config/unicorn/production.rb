@@ -10,8 +10,6 @@
   $pid     = File.expand_path 'tmp/pids/unicorn.pid', $app_dir
 #エラーログを吐き出すファイルのディレクトリ
   $std_log = File.expand_path 'log/unicorn.log', $app_dir
-# バンドル
-  ENV['BUNDLE_GEMFILE'] = 'Gemfile', $app_dir
 
 # 上記で設定したものが適応されるよう定義
   worker_processes  $worker
