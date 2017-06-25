@@ -11,6 +11,9 @@ timeout 30
 
 preload_app true
 
+stdout_path "#{root}/log/production.log"
+stderr_path "#{root}/log/production.log"
+
 before_exec do |server|
   ENV["BUNDLE_GEMFILE"] = "#{root}/Gemfile"
 end
