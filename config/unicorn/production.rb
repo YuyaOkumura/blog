@@ -5,7 +5,7 @@ pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
 stdout_path "#{root}/log/unicorn.log"
 
-listen "/tmp/unicorn.sock"
+listen File.expand_path('tmp/sockets/unicorn.sock', root)
 worker_processes 2
 timeout 30
 
