@@ -1,21 +1,23 @@
 # production.rb
-root = "/var/www/blog/current"
-working_directory root
-pid "#{root}/tmp/pids/unicorn.pid"
-stderr_path "#{root}/log/unicorn.log"
-stdout_path "#{root}/log/unicorn.log"
+current_path = "/var/www/blog/current"
+shared_path = "/var/www/blog/shared"
+working_directory current_path
+stderr_path "#{current_path}/log/unicorn.log"
+stdout_path "#{current_path}/log/unicorn.log"
 
-listen File.expand_path('tmp/sockets/unicorn.sock', root)
+listen File.expand_path('tmp/sockets/unicorn.sock', shared_path)
+pid File.expand_path('tmp/pids/unicorn.pid', shared_path)
+
 worker_processes 2
 timeout 30
 
 preload_app true
 
-stdout_path "#{root}/log/production.log"
-stderr_path "#{root}/log/production.log"
+stdout_path "#{current_path}/log/production.log"
+stderr_path "#{current_path}/log/production.log"
 
 before_exec do |server|
-  ENV["BUNDLE_GEMFILE"] = "#{root}/Gemfile"
+  ENV["BUNDLE_GEMFILE"] = "#{current_path}/Gemfile"
 end
 
 before_fork do |server, worker|
@@ -27,7 +29,7 @@ before_fork do |server, worker|
 
   # Before forking, kill the master process that belongs to the .oldbin PID.
   # This enables 0 downtime deploys.
-  old_pid = "#{root}/tmp/pids/unicorn.pid.oldbin"
+  old_pid = "#{current_path}/tmp/pids/unicorn.pid.oldbin"
   if File.exists?(old_pid) && server.pid != old_pid
     begin
       Process.kill("QUIT", File.read(old_pid).to_i)
