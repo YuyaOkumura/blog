@@ -6,7 +6,7 @@
 }
 
 .article-created {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: $mediamColor;
 }
 
@@ -30,4 +30,11 @@
 .article-foot {
   padding: .5rem;
   border-top: 1rem solid $mediamColor;
+}
+
+@media screen and (max-width: 769px) {
+  .article {
+    width: 100%;
+    margin: 1rem 0;
+  }
 }

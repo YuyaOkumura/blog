@@ -2,10 +2,11 @@ doctype html
 html
   head
     title
-      | Blog
+      | さろてきさいころすてーきEDIT
     = csrf_meta_tags
     = stylesheet_link_tag    'admin_writer/application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag('favicon.png')
   body.admin-body
     .container
       = render 'modules/header'
