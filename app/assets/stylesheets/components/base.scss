@@ -13,10 +13,12 @@ body {
 }
 
 .side {
+  float: left;
   width: 25%;
 }
 
 .main {
+  float: left;
   width: 70%;
   padding: 1rem;
   background: $mainColor;
@@ -35,4 +37,26 @@ body {
 .main-section-parag {
   margin-bottom: 1rem;
   color: $mediamColor;
+}
+
+@media screen and (max-width: 769px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .flex.j-bet.a-base {
+    flex-direction: column-reverse;
+  }
+
+  .side {
+    display: none;
+  }
+
+  .main {
+    width: 100%;
+  }
 }

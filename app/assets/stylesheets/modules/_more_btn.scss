@@ -4,8 +4,8 @@
 }
 
 .more-btn {
-  padding: .7rem;
-  border-radius: 1rem;
-  color: $baseColor;
-  background: $accentColor;
+  padding: .5rem .7rem;
+  border-radius: .5rem;
+  color: $accentColor;
+  border: 1px solid $accentColor;
 }

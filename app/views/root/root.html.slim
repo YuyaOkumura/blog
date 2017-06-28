@@ -4,7 +4,7 @@ section.main-section
     - @articles.each do |article|
       = render partial: 'modules/article_card', locals: { article: article }
   = render partial: 'modules/more_btn', locals: { path: articles_path }
-section.main-section.p2rem.mb5rem
+section.main-section
   h3.main-section-title 人気の投稿
   .clearfix
     - @popular_articles.each do |popular_article|

@@ -54,3 +54,23 @@
 .header-nav-list-item-link:hover {
   color: $accentColor;
 }
+
+@media screen and (max-width: 769px) {
+  .header-home {
+    width: 100%;
+  }
+
+  .header-home-title {
+    width: 100%;
+    padding-left: 1rem;
+    font-size: 2rem;
+  }
+
+  .header-home-parag {
+    padding-left: 1rem;
+  }
+
+  .header-nav {
+    display: none;
+  }
+}
