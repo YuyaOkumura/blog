@@ -12,10 +12,10 @@ html
     .container
       = render 'modules/header'
       .clearfix
-        aside.side
-          = render 'modules/side_clumn'
         main.main
           .breadcrumb
             = render_breadcrumbs :separator => ' > '
           = yield
+        aside.side
+          = render 'modules/side_clumn'
     = render 'modules/footer'
