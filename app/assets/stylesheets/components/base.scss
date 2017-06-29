@@ -1,5 +1,8 @@
 body {
   background: $baseColor;
+  height: 100vh;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .container {
@@ -18,7 +21,7 @@ body {
 }
 
 .main {
-  float: left;
+  float: right;
   width: 70%;
   padding: 1rem;
   background: $mainColor;
@@ -39,24 +42,35 @@ body {
   color: $mediamColor;
 }
 
+.hidden-icon {
+  display: none;
+}
+
+
 @media screen and (max-width: 769px) {
-  .main {
-    padding: 1rem;
+  body {
+    padding-bottom: 3.2rem;
   }
 
   .container {
     width: 100%;
   }
 
-  .flex.j-bet.a-base {
-    flex-direction: column-reverse;
+  .main {
+    width: 100%;
+    padding: 1rem;
   }
 
   .side {
-    display: none;
+    width: 100%;
   }
 
-  .main {
-    width: 100%;
+  .fa {
+    display: inline-block;
+  }
+
+  .fa::before {
+    display: block;
+    font-size: 1.5rem;
   }
 }

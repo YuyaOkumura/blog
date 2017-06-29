@@ -4,15 +4,21 @@ header.header
       = link_to root_path
         h1.header-home-title さろてきさいころすてーき
         p.header-home-parag やんごとない日常を書き連ねる系のアレ
-    / ナビ。ここまでモジュール化すると無意味に細かくなるのでモジュール化しない。
     nav.header-nav
       ul.header-nav-list
         li.header-nav-list-item
-          = link_to 'ホーム', root_path, class: 'header-nav-list-item-link block'
+          = link_to root_path, class: 'header-nav-list-item-link block'
+            .fa.fa-home.hidden-icon
+            .header-nav-list-item-link-content = 'ホーム'
+
         li.header-nav-list-item
-          = link_to '記事', articles_path, class: 'header-nav-list-item-link block'
+          = link_to articles_path, class: 'header-nav-list-item-link block'
+            .fa.fa-clone.hidden-icon
+            .header-nav-list-item-link-content = '記事'
         li.header-nav-list-item
-          = link_to 'お問い合わせ', new_contact_path, class: 'header-nav-list-item-link block'
+          = link_to new_contact_path, class: 'header-nav-list-item-link block'
+            .fa.fa-send.hidden-icon
+            .header-nav-list-item-link-content = 'お問い合わせ'
   - else
     .header-home
       = link_to admin_writer_root_path
