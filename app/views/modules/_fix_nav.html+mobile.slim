@@ -1,0 +1,15 @@
+nav.header-nav
+  ul.header-nav-list
+    li.header-nav-list-item
+      = link_to root_path, class: 'header-nav-list-item-link block'
+        .fa.fa-home.hidden-icon
+        .header-nav-list-item-link-content = 'ホーム'
+
+    li.header-nav-list-item
+      = link_to articles_path, class: 'header-nav-list-item-link block'
+        .fa.fa-clone.hidden-icon
+        .header-nav-list-item-link-content = '記事'
+    li.header-nav-list-item
+      = link_to new_contact_path, class: 'header-nav-list-item-link block'
+        .fa.fa-send.hidden-icon
+        .header-nav-list-item-link-content = 'お問い合わせ'

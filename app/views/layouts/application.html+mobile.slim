@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title
+      | さろてきさいころすてーき
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    = favicon_link_tag('favicon.png')
+  body
+    .container
+      = render 'modules/header'
+      .clearfix
+        main.main
+          .breadcrumb
+            = render_breadcrumbs :separator => ' > '
+          = yield
+        aside.side
+          = render 'modules/side_clumn'
+    = render 'modules/footer'
+    = render 'modules/fix_nav'

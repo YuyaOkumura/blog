@@ -37,4 +37,18 @@
     width: 100%;
     margin: 1rem 0;
   }
+
+  .article-head {
+    display: flex;
+    align-items: center;
+  }
+
+  .article-title {
+    margin-right: 2rem;
+  }
+
+  .article-body {
+    padding: 1rem;
+    border-top: .5rem solid $mediamColor;
+  }
 }
