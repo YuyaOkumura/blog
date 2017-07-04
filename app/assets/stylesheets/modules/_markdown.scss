@@ -1,4 +1,20 @@
 .markdown {
   margin-bottom: 1rem;
   color: $spotColor;
+
+  li {
+    list-style-type: circle;
+  }
+
+  h1, h2, h3, h4, h5, {
+    padding-left: .5rem;
+    font-weight: bold;
+    border-left: 1rem solid $accentColor;
+    border-bottom: 1px solid $accentColor;
+    margin: 1rem 0 2rem;
+  }
+
+  p {
+    padding-bottom: 1rem;
+  }
 }

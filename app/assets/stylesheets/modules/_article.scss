@@ -8,6 +8,7 @@
 .article-created {
   margin-bottom: 1rem;
   color: $mediamColor;
+  float: right;
 }
 
 .article-title {
@@ -17,6 +18,11 @@
 
 .article-parag {
   color: $spotColor;
+}
+
+.article-header {
+  display: flex;
+  align-items: center;
 }
 
 .article-head {
