@@ -7,6 +7,13 @@ class ApplicationController < ActionController::Base
   before_action :set_user_token
   before_action :set_archives
 
+  before_action do
+    case
+    when request.user_agent.present? && (request.user_agent.include?('iPhone') || request.user_agent.include?('Android'))
+      request.variant = :mobile
+    end
+  end
+
   def set_tags
     @default_tags = Tag.limit(5)
   end
