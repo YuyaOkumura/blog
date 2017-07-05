@@ -2,6 +2,11 @@ class ContactsController < ApplicationController
   def new
     @contact = Contact.new
     add_breadcrumb 'お問い合わせ', new_contact_path
+
+    set_meta_tags(
+      title: 'お問い合わせ',
+      description: 'お問い合わせページです。今後、運用の参考となるご意見をお待ちしております。'
+    )
   end
 
   def create

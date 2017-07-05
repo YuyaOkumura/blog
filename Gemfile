@@ -83,3 +83,5 @@ gem 'redcarpet', '~> 2.3.0'
 gem 'coderay'
 # 検索機能のサジェスト
 gem 'rails4-autocomplete'
+# SEO
+gem 'meta-tags'
