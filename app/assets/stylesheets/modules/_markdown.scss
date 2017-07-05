@@ -1,6 +1,8 @@
 .markdown {
   margin-bottom: 1rem;
   color: $spotColor;
+  letter-spacing: .2rem;
+  line-height: 2;
 
   li {
     list-style-type: circle;
@@ -11,10 +13,10 @@
     font-weight: bold;
     border-left: 1rem solid $accentColor;
     border-bottom: 1px solid $accentColor;
-    margin: 1rem 0 2rem;
+    margin: 1rem 0 3rem;
   }
 
   p {
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
   }
 }

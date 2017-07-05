@@ -1,9 +1,14 @@
+.like-btn {
+  display: flex;
+  align-items: center;
+}
+
 .like {
+  font-size: 2rem;
   color: $accentColor;
 }
-.able {
+
+.like-count {
+  padding-left: .5rem;
   color: $accentColor;
-}
-.disable {
-  color: $mediamColor;
 }
