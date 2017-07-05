@@ -16,7 +16,6 @@ gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
 gem "jquery-ui-rails"
-gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 group :production do
