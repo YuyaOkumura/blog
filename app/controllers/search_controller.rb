@@ -17,6 +17,11 @@ class SearchController < ApplicationController
     else
       @tag_notice = "タグの検索結果です"
     end
+
+    set_meta_tags(
+      title: '検索ページ',
+      description: '検索ページです。特定のタグや記事を検索する場合にご利用ください。'
+    )
   end
 
   def suggest

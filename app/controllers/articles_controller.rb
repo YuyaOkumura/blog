@@ -37,11 +37,21 @@ class ArticlesController < ApplicationController
     if params[:page].present?
       add_breadcrumb "#{params[:page]}ページ目", articles_path(page: params[:page])
     end
+
+    set_meta_tags(
+      title: @notice,
+      description: "#{@notice}　のページです。条件ごとの記事が閲覧できます。"
+    )
   end
 
   def show
     @article = Article.find(params[:id])
     add_breadcrumb @article.title, article_path(@article)
+
+    set_meta_tags(
+      title: @article.title,
+      description: @article.content.truncate(100)
+    )
   end
 
   private
