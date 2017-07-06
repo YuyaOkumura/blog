@@ -19,7 +19,7 @@ module ApplicationHelper
         card: 'summary',
         title: :title,
         description: :description,
-        image: {_: ""}
+        image: {_: "card.png"}
       }
     }
   end
