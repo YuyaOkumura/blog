@@ -2,5 +2,5 @@ section.main-section
   h3.main-section-title = @notice
   = paginate @articles
   .clearfix
-    = render partial: 'modules/article_cards', locals: { articles: @articles }
+    = render partial: 'modules/article_cards', locals: { articles: @articles, limit: nil }
   = paginate @articles

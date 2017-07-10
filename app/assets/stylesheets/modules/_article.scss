@@ -5,10 +5,20 @@
   background: $mainColor;
 }
 
+.article-card-title {
+  font-size: 1rem;
+  color: $spotColor;
+}
+
+.article-card-created {
+  font-size: .7rem;
+  color: $mediamColor;
+}
+
 .article-created {
+  float: right;
   margin-bottom: 1rem;
   color: $mediamColor;
-  float: right;
 }
 
 .article-title {
@@ -38,6 +48,15 @@
   border-top: 1rem solid $mediamColor;
 }
 
+.article-tags {
+  padding: 1.5rem 0;
+}
+
+.article-tags-title {
+  padding-bottom: .5rem;
+  color: $mediamColor;
+}
+
 @media screen and (max-width: 769px) {
   .article {
     width: 100%;
@@ -50,7 +69,7 @@
     flex-wrap: wrap;
   }
 
-  .article-title {
+  .article-card-title {
     margin-right: 2rem;
   }
 
