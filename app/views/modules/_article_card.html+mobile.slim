@@ -1,7 +1,7 @@
 .article.pull-left
   = link_to article_path(article)
     .article-head
-      p.article-title = article.title
+      p.article-card-title = article.title.truncate(30)
       p.article-parag
         = render partial: 'modules/like', locals: { article: article }
   .article-body

@@ -1,0 +1,4 @@
+section.main-section
+  h3.main-section-title 関連記事
+  - article_tags.each do |article_tag|
+    = render partial: 'modules/article_cards', locals: { articles: article_tag.tag.articles, limit: 5 }

@@ -3,6 +3,11 @@
     = @article.title
   p.article-parag
     = render partial: 'modules/like', locals: { article: @article }
+  .article-tags
+    p.article-tags-title 関連タグ
+    - @article.article_tags.each do |article_tag|
+      = link_to article_tag.tag.name, tag_path(article_tag.tag.slug), class: 'tag'
   p.article-created = @article.created_at
 .markdown
   = markdown(@article.content).html_safe
+= render partial: 'modules/related_articles', locals: { article_tags: @article.article_tags }

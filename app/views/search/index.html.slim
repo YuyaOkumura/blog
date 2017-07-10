@@ -10,7 +10,7 @@ section.main-section
     = "記事とタグを検索します"
   p.main-section-parag = @article_notice
   .clearfix
-    = render partial: 'modules/article_cards', locals: { articles: @searched_articles }
+    = render partial: 'modules/article_cards', locals: { articles: @searched_articles, limit: nil }
   p.main-section-parag = @tag_notice
   .clearfix
     - @searched_tags.each do |search_tag|

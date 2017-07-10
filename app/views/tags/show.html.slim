@@ -5,5 +5,5 @@ section.main-section
   p.main-section-parag = "#{@tag.name} : #{@tag.desc}"
   = paginate @aritcles
   .clearfix
-    = render partial: 'modules/article_cards', locals: { articles: @aritcles }
+    = render partial: 'modules/article_cards', locals: { articles: @aritcles, limit: nil }
   = paginate @aritcles
