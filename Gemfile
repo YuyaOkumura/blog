@@ -85,3 +85,4 @@ gem 'coderay'
 gem 'rails4-autocomplete'
 # SEO
 gem 'meta-tags'
+gem 'google-analytics-rails'
