@@ -1,13 +1,15 @@
 .clearfix
   h3.article-title
     = @article.title
+  p.article-created = "更新日時: #{@article.updated_at}"
+  = render partial: 'modules/social_share', locals: { article: @article }
   p.article-parag
     = render partial: 'modules/like', locals: { article: @article }
   .article-tags
     p.article-tags-title 関連タグ
-    - @article.article_tags.each do |article_tag|
-      = link_to article_tag.tag.name, tag_path(article_tag.tag.slug), class: 'tag'
-  p.article-created = @article.created_at
+    - @article.tags.each do |tag|
+      = link_to tag.name, tag_path(tag.slug), class: 'tag'
 .markdown
   = markdown(@article.content).html_safe
-= render partial: 'modules/related_articles', locals: { article_tags: @article.article_tags }
+= render partial: 'modules/social_share', locals: { article: @article }
+= render partial: 'modules/related_articles', locals: { tags: @article.tags, article: @article }

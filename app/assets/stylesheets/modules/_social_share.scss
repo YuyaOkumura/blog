@@ -1,0 +1,54 @@
+.social-share-wrapper {
+  padding-bottom: 2rem;
+}
+
+.social-share-wrapper li a {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  padding: .5rem 0;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+}
+
+.social-share-wrapper li a:hover {
+  opacity: .5;
+}
+
+.social-share-title {
+  margin-bottom: 0;
+  color: $spotColor;
+}
+
+.social-share_twitter {
+  float: left;
+  margin-right: 5px;
+  background: #2ba5df;
+}
+.fa-twitter:before {
+  font-size: 2.5rem;
+}
+.fa-twitter {
+  padding-top: 5%;
+}
+
+.social-share_facebook {
+  float: left;
+  margin-right: 5px;
+  background: #3b5998;
+}
+.fa-facebook:before {
+  font-size: 2rem;
+}
+.fa-facebook {
+  padding-top: 15%;
+}
+
+.social-share_hatena {
+  float: left;
+  font-size: 2rem;
+  margin-right: 5px;
+  background-color: #1b6fc9;
+}

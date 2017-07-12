@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 
   def index
     # is_public = true のレコードを整形していく
-    articles = Article.where(is_public: true)
+    articles = Article.includes(:tags).where(is_public: true)
     if params[:like].blank? && params[:year_month].blank?
       @articles = articles.order("created_at DESC").page(params[:page])
       @notice = '記事一覧 : 新着順'
@@ -45,7 +45,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.includes(:tags).find(params[:id])
     add_breadcrumb @article.title, article_path(@article)
 
     set_meta_tags(

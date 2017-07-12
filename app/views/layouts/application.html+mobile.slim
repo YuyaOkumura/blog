@@ -9,7 +9,8 @@ html
 
     meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
     = display_meta_tags default_meta_tags
-  body
+  body#body
+    = render 'modules/to_top'
     .container
       = render 'modules/header'
       .clearfix

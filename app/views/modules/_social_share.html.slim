@@ -1,0 +1,12 @@
+.social-share-wrapper
+  h3.social-share-title シェア
+  ol.clearfix
+    li.social-share_twitter
+      = link_to "http://twitter.com/share?url=#{request.url}&text=#{article.title}&via=_saroteki", target: "_blank"
+        span.fa.fa-twitter
+    li.social-share_facebook
+      = link_to "http://www.facebook.com/share.php?u=#{request.url}", onclick: "window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;", target: "_blank"
+        span.fa.fa-facebook
+    li.social-share_hatena
+      = link_to "http://b.hatena.ne.jp/entry/#{request.url}", taret: "_blank"
+        = "B!"

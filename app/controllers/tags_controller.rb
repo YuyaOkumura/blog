@@ -4,7 +4,7 @@ class TagsController < ApplicationController
 
   def index
     # タグの数は肥大化したらページネーション化する
-    @tags = Tag.all
+    @tags = Tag.includes(:articles)
 
     set_meta_tags(
       title: 'タグ一覧',
@@ -13,7 +13,7 @@ class TagsController < ApplicationController
   end
 
   def show
-    @tag = Tag.find_by(slug: params[:slug])
+    @tag = Tag.includes(:articles).find_by(slug: params[:slug])
     @aritcles = @tag.articles.page(params[:page])
     add_breadcrumb "#{@tag.name}", tag_path(@tag.slug)
 

@@ -1,0 +1,25 @@
+.to-top {
+  display: none;
+}
+
+.to-top-icon::before {
+  font-size: 3rem;
+}
+
+.to-top-text {
+  font-size: .7rem;
+}
+
+@media screen and (max-width: 769px) {
+  .to-top {
+    display: block;
+    position: fixed;
+    bottom: 4rem;
+    right: 1rem;
+    text-align: center;
+    padding: 0 .5rem;
+    border: 1px solid $accentColor;
+    border-radius: 5px;
+    background: rgba( 50, 50, 50, .5);
+  }
+}
