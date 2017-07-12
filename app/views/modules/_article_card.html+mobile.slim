@@ -5,5 +5,5 @@
       p.article-parag
         = render partial: 'modules/like', locals: { article: article }
   .article-body
-    - article.article_tags.each do |article_tag|
-      = link_to article_tag.tag.name, tag_path(article_tag.tag.slug), class: 'tag'
+    - article.tags.each do |tag|
+      = link_to tag.name, tag_path(tag.slug), class: 'tag'
