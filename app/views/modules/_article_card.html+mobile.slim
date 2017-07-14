@@ -2,8 +2,6 @@
   = link_to article_path(article)
     .article-head
       p.article-card-title = article.title.truncate(30)
-      p.article-parag
-        = render partial: 'modules/like', locals: { article: article }
   .article-body
     - article.tags.each do |tag|
       = link_to tag.name, tag_path(tag.slug), class: 'tag'

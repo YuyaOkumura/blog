@@ -1,6 +1,0 @@
-.like-btn
-  - if Like.find_by(article_id: article.id, user_token: current_user_token).present?
-    = fa_icon 'heart', class: 'like', data_id: article.id
-  - else
-    = fa_icon 'heart-o', class: 'like', data_id: article.id
-  span.like-count = " #{article.likes.count} いいね"

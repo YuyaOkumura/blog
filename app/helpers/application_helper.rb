@@ -4,8 +4,7 @@ module ApplicationHelper
       site: 'さろてきさいころすてーき',
       separator: '|',
       title: 'ホームのページ',
-      description: 'ぬるっとしたブログです。中の人はエンジニアです。ぬるっとした内容から技術的な話まで。日々思いついたことを書きつらねます。',
-      charset: 'utf-8',
+      description: 'さろてきさいころすてーきは、日々考えたことを書き連ねるブログです。技術系の話からくだらない話まで。',
       og: {
         title: 'さろてきさいころすてーき',
         type: 'website',
