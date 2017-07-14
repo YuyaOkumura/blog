@@ -3,10 +3,10 @@
     = @article.title
   p.article-created = "更新日時: #{@article.updated_at}"
   = render partial: 'modules/social_share', locals: { article: @article }
-  p.article-parag
-    = render partial: 'modules/like', locals: { article: @article }
+  p.article-desc
+    = @article.desc
   .article-tags
-    p.article-tags-title 関連タグ
+    p.article-tags-title
     - @article.tags.each do |tag|
       = link_to tag.name, tag_path(tag.slug), class: 'tag'
 .markdown

@@ -50,7 +50,7 @@ class ArticlesController < ApplicationController
 
     set_meta_tags(
       title: @article.title,
-      description: @article.content.gsub(/#/, "").gsub(/-/, "").truncate(100)
+      description: @article.desc
     )
   end
 
