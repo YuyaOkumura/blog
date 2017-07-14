@@ -6,6 +6,3 @@
   .article-body
     - article.tags.each do |tag|
       = link_to tag.name, tag_path(tag.slug), class: 'tag'
-  .article-foot
-    p.article-parag
-      = render partial: 'modules/like', locals: { article: article }

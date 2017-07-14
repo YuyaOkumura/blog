@@ -10,4 +10,4 @@ section.main-section
     - @popular_articles.each do |popular_article|
       = render partial: 'modules/article_card', locals: { article: popular_article }
   .tac.mt2rem
-    = render partial: 'modules/more_btn', locals: { path: articles_path(like: true) }
+    = render partial: 'modules/more_btn', locals: { path: articles_path(popular: true) }

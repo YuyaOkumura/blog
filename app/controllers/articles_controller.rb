@@ -6,23 +6,13 @@ class ArticlesController < ApplicationController
   def index
     # is_public = true のレコードを整形していく
     articles = Article.includes(:tags).where(is_public: true)
-    if params[:like].blank? && params[:year_month].blank?
+    if params[:popular].blank? && params[:year_month].blank?
       @articles = articles.order("created_at DESC").page(params[:page])
       @notice = '記事一覧 : 新着順'
     # 人気順かつ月指定あり
-    elsif params[:like] == 'true' && params[:year_month].present?
-      # Kaminari.paginate_array : arrayに対してkaminariのページネーションをするためにarrayを加工
-      @articles = Kaminari.paginate_array(
-        articles.sort_by { |article| -(article.likes.count) }
-      ).page(params[:page])
-      @notice = "記事一覧 : #{year_month_conversion(params[:year_month])}の記事 : 人気順"
-    # 人気順
-    elsif params[:like] == 'true'
-      # Kaminari.paginate_array : arrayに対してkaminariのページネーションをするためにarrayを加工
-      @articles = Kaminari.paginate_array(
-        articles.sort_by { |article| -(article.likes.count) }
-      ).page(params[:page])
-      @notice = "記事一覧 : 人気順"
+    # elsif params[:] == 'true' && params[:year_month].present?
+    # # 人気順
+    # elsif params[:popular] == 'true'
     # 月ごとの投稿
     elsif params[:year_month].present?
       @articles = articles.where(created_at: get_current_month(params[:year_month]))
@@ -34,6 +24,7 @@ class ArticlesController < ApplicationController
       @articles = Kaminari.paginate_array([]).page(params[:page])
       @notice = "エラーがあります。正しく描画されませんでした。"
     end
+
     if params[:page].present?
       add_breadcrumb "#{params[:page]}ページ目", articles_path(page: params[:page])
     end
