@@ -1,6 +1,7 @@
 Rails.application.configure do
   # redis設定
-  ENV["REDIS"] = "localhost:6379"
+  ENV['REDIS_HOST'] = "localhost"
+  ENV['REDIS_PORT'] = "3000"
 
   # Settings specified here will take precedence over those in config/application.rb.
 
