@@ -1,6 +1,4 @@
 require 'redis'
 
-Redis::Objects.redis = Redis.new(
-  host: ENV['REDIS_HOST'],
-  port: ENV['REDIS_PORT']
-)
+uri = URI.parse(ENV["REDIS"])
+REDIS = Redis.new(host: uri.host, port: uri.port)
