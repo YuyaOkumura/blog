@@ -5,14 +5,24 @@ class ArticlesController < ApplicationController
 
   def index
     # is_public = true のレコードを整形していく
-    articles = Article.includes(:tags).where(is_public: true)
+    articles = Article.where(is_public: true)
     if params[:popular].blank? && params[:year_month].blank?
       @articles = articles.order("created_at DESC").page(params[:page])
       @notice = '記事一覧 : 新着順'
     # 人気順かつ月指定あり
-    # elsif params[:] == 'true' && params[:year_month].present?
-    # # 人気順
-    # elsif params[:popular] == 'true'
+    elsif params[:popular] == 'true' && params[:year_month].present?
+      # Kaminari.paginate_array : arrayに対してkaminariのページネーションをするためにarrayを加工
+      @articles = Kaminari.paginate_array(
+        articles.sort_by { |article| -(article.get_view_count) }
+      ).page(params[:page])
+      @notice = "記事一覧 : #{year_month_conversion(params[:year_month])}の記事 : 月間PV順"
+    # 人気順
+    elsif params[:popular] == 'true'
+      # Kaminari.paginate_array : arrayに対してkaminariのページネーションをするためにarrayを加工
+      @articles = Kaminari.paginate_array(
+        articles.sort_by { |article| -(article.get_view_count) }
+      ).page(params[:page])
+      @notice = "記事一覧 : 月間PV順"
     # 月ごとの投稿
     elsif params[:year_month].present?
       @articles = articles.where(created_at: get_current_month(params[:year_month]))
@@ -38,6 +48,8 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.includes(:tags).find(params[:id])
     add_breadcrumb @article.title, article_path(@article)
+
+    @article.increment_view
 
     set_meta_tags(
       title: @article.title,
