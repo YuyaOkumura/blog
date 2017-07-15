@@ -9,7 +9,7 @@ end
 gem 'rails', '~> 5.0.1'
 # DB
 gem 'mysql2', '~> 0.3.20'
-gem 'redis'
+gem 'redis', '3.2.0'
 gem 'redis-objects'
 gem 'puma', '~> 3.0'
 
