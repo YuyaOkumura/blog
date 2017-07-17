@@ -1,6 +1,6 @@
 Rails.application.configure do
   # redis設定
-  ENV["REDIS"] = "blog-redis-001.6dkcoa.0001.apne1.cache.amazonaws.com:6379"
+  ENV["REDIS"] = "blog-redis.6dkcoa.0001.apne1.cache.amazonaws.com:6379"
 
   # Settings specified here will take precedence over those in config/application.rb.
 
