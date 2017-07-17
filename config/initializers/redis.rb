@@ -1,5 +1,4 @@
 require 'redis'
+require 'redis-objects'
 
-p "host: #{ENV["REDIS_HOST"]}, port: #{ENV["REDIS_PORT"]}"
-
-REDIS = Redis.new(host: ENV["REDIS_HOST"], port: ENV["REDIS_PORT"])
+Redis.current = Redis.new(host: ENV["REDIS_HOST"], port: ENV["REDIS_PORT"])
