@@ -22,4 +22,11 @@ class Article < ApplicationRecord
   def get_view_count
     self.class.views[id].to_i
   end
+
+  class << self
+    def get_pv_ranking(range = 3)
+      ids = views.revrange(0, (range - 1))
+      ids.map { |id| find(id) }
+    end
+  end
 end
