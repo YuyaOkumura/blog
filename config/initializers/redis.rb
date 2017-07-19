@@ -1,4 +1,4 @@
 require 'redis'
 require 'redis-objects'
-
-Redis.current = Redis.new(url: ENV["REDIS"])
+uri = URI.parse(ENV["REDIS"])
+Redis.current = Redis.new(host: uri.host, port: uri.port)
