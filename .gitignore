@@ -11,7 +11,10 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
-# Ignore database.yml
+# Ignore database
+# rocal redis server
+/dump.rdb
+# database.yml
 /config/database.yml
 
 # Ignore all logfiles and tempfiles.
@@ -28,7 +31,7 @@ config/deploy/*
 config/deploy.rb
 
 config/settings.local.yml
-config/settings/*.local.yml
+config/settings/
 config/environments/*.local.yml
 
 config/settings/development.yml

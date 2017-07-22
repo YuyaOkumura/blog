@@ -67,6 +67,11 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
                                         :article_id,
                                         :tag_id,
                                         :_destroy
+                                      ],
+                                      article_images_attributes: [
+                                        :article_id,
+                                        :image,
+                                        :_destroy
                                       ]
       )
     end
