@@ -38,6 +38,7 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
     redirect_to admin_writer_articles_url, notice: 'Article was successfully destroyed.'
   end
 
+  # todo tags_controllerに移動
   def tag_check
     tag = Tag.where(name: tag_name_params[:tag_name])
     if tag.present?
@@ -48,7 +49,16 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
     render json: result
   end
 
-  def preview
+  # todo markdownに名称変更
+  # todo markdown_images_controllerに移動
+  def markdown_image_upload
+    article_image = MarkdownImage.new(image: article_image_params[:markdown_image])
+    if article_image.save
+      result = article_image
+    else
+      result = false
+    end
+    render json: result
   end
 
   private
@@ -62,21 +72,23 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
                                       :content,
                                       :is_public,
                                       :user_id,
+                                      :main_image,
                                       article_tags_attributes: [
                                         :id,
                                         :article_id,
                                         :tag_id,
                                         :_destroy
-                                      ],
-                                      article_images_attributes: [
-                                        :article_id,
-                                        :image,
-                                        :_destroy
                                       ]
       )
     end
 
+    # todo tags_controllerに移動
     def tag_name_params
       params.require(:article).permit(:tag_name)
+    end
+
+    # todo markdown_images_controllerに移動
+    def markdown_image_params
+      params.require(:article).permit(:markdown_image)
     end
 end

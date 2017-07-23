@@ -1,11 +1,7 @@
-class ArticleImage < ApplicationRecord
-  belongs_to :article
+class MarkdownImage < ApplicationRecord
+  before_validation :set_image
 
-  has_attached_file :image, styles: {
-                              large: "500x500>",
-                              medium: "300x300>",
-                              thumb: "100x100>"
-                            },
+  has_attached_file :image, styles: { large: "500x500>" },
                             storage: :s3,
                             s3_permissions: :private,
                             s3_credentials: "#{Rails.root}/config/settings/#{Rails.env}_s3.yml",
@@ -15,5 +11,9 @@ class ArticleImage < ApplicationRecord
 
   def authenticated_image_url(style)
     image.s3_object(style).url_for(:read, secure: true)
+  end
+
+  def set_image
+    file = Paperclip.io_adapters.for(image)
   end
 end

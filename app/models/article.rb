@@ -7,7 +7,6 @@ class Article < ApplicationRecord
   belongs_to :user
 
   has_many :article_tags
-  has_many :article_images
   has_many :tags, through: :article_tags
 
   accepts_nested_attributes_for :article_tags, allow_destroy: true
@@ -16,6 +15,24 @@ class Article < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
 
+  # paperclip setting
+  has_attached_file :main_image, styles: {
+                              large: "500x500>",
+                              medium: "300x300>",
+                              thumb: "100x100>"
+                            },
+                            storage: :s3,
+                            s3_permissions: :private,
+                            s3_credentials: "#{Rails.root}/config/settings/#{Rails.env}_s3.yml",
+                            path: ":class/:attachment/:id/:style.:extension"
+
+  validates_attachment_content_type :main_image, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
+  def authenticated_image_url(style)
+    image.s3_object(style).url_for(:read, secure: true)
+  end
+
+  # redis setting
   def increment_view
     self.class.views.increment(id)
   end
