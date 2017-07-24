@@ -19,7 +19,7 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to [:admin_writer, @article], notice: 'Article was successfully created.'
+      redirect_to [:admin_writer, @article], notice: '記事は正しく作成されました'
     else
       render :new
     end
@@ -27,7 +27,7 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to [:admin_writer, @article], notice: 'Article was successfully updated.'
+      redirect_to [:admin_writer, @article], notice: '記事は正しく更新されました'
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
 
   def destroy
     @article.destroy
-    redirect_to admin_writer_articles_url, notice: 'Article was successfully destroyed.'
+    redirect_to admin_writer_articles_url, notice: '記事は正しく削除されました'
   end
 
   # todo tags_controllerに移動
@@ -49,7 +49,6 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
     render json: result
   end
 
-  # todo markdownに名称変更
   # todo markdown_images_controllerに移動
   def markdown_image_upload
     article_image = MarkdownImage.new(image: article_image_params[:markdown_image])
