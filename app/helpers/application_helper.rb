@@ -22,4 +22,12 @@ module ApplicationHelper
       }
     }
   end
+
+  def get_main_image_url(article: nil, style: nil)
+    if article.main_image.present?
+      return article.main_image.url(style)
+    else
+      return "no_image.png"
+    end
+  end
 end

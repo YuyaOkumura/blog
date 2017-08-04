@@ -17,7 +17,6 @@ class Article < ApplicationRecord
 
   # paperclip setting
   has_attached_file :main_image, styles: {
-                              large: "500x500>",
                               medium: "300x300>",
                               thumb: "100x100>"
                             },
@@ -29,7 +28,7 @@ class Article < ApplicationRecord
   validates_attachment_content_type :main_image, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   def authenticated_image_url(style)
-    image.s3_object(style).url_for(:read, secure: true)
+    main_image.s3_object(style).url_for(:read, secure: true)
   end
 
   # redis setting

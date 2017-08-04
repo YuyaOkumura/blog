@@ -10,6 +10,7 @@
     - @article.tags.each do |tag|
       = link_to tag.name, tag_path(tag.slug), class: 'tag'
 .markdown
+  = image_tag(get_main_image_url(article: @article, style: :original), width: '100%', class: 'main-image')
   = markdown(@article.content).html_safe
 = render partial: 'modules/social_share', locals: { article: @article }
 = render partial: 'modules/related_articles', locals: { tags: @article.tags, article: @article }

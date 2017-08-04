@@ -1,8 +1,7 @@
 class MarkdownImage < ApplicationRecord
   before_validation :set_image
 
-  has_attached_file :image, styles: { large: "500x500>" },
-                            storage: :s3,
+  has_attached_file :image, storage: :s3,
                             s3_permissions: :private,
                             s3_credentials: "#{Rails.root}/config/settings/#{Rails.env}_s3.yml",
                             path: ":class/:attachment/:id/:style.:extension"

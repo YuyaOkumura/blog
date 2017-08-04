@@ -17,6 +17,9 @@
   .form-group
     p = f.label :desc
     = f.text_field :desc, class: 'form-controll'
+  .form-group
+    p = f.label :main_image
+    = f.file_field :main_image, class: 'form-controll'
   .admin-tag-form-container
     = label :tag_name, :tag
     .admin-tag-form
