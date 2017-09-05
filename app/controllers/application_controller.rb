@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_tags
-    @default_tags = Tag.limit(5)
+    @default_tags = Tag.all.sort_by { |tag| -(tag.article_tags.count) }.slice(0, 5)
   end
 
   def set_base_breadcrumb

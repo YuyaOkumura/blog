@@ -60,6 +60,10 @@
   color: $mediamColor;
 }
 
+.main-image {
+  max-width: 100%;
+}
+
 @media screen and (max-width: 769px) {
   .article {
     border-top: .5rem solid $accentColor;
