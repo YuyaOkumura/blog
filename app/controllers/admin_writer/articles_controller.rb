@@ -49,17 +49,6 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
     render json: result
   end
 
-  # todo markdown_images_controllerに移動
-  def markdown_image_upload
-    article_image = MarkdownImage.new(image: article_image_params[:markdown_image])
-    if article_image.save
-      result = article_image
-    else
-      result = false
-    end
-    render json: result
-  end
-
   private
     def set_article
       @article = Article.find(params[:id])
@@ -84,10 +73,5 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
     # todo tags_controllerに移動
     def tag_name_params
       params.require(:article).permit(:tag_name)
-    end
-
-    # todo markdown_images_controllerに移動
-    def markdown_image_params
-      params.require(:article).permit(:markdown_image)
     end
 end

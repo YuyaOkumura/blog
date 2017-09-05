@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       post 'tag_check', on: :collection
       post 'preview', on: :collection
     end
+    post '/create_markdown_image', to: 'markdown_image#create', as: 'create_markdown_image'
     resources :tags
   end
 end

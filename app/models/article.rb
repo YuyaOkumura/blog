@@ -17,8 +17,7 @@ class Article < ApplicationRecord
 
   # paperclip setting
   has_attached_file :main_image, styles: {
-                              medium: "300x300>",
-                              thumb: "100x100>"
+                              thumb: "500x500#",
                             },
                             storage: :s3,
                             s3_permissions: :private,

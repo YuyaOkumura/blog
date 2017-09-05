@@ -37,5 +37,5 @@
           = link_to_add_association "リンク", f, :article_tags
   .form-group
     p = f.label :content
-    = f.text_area :content, class: 'form-controll'
+    = f.text_area :content, class: 'form-controll drag-area'
   .actions = f.submit '送信', class: 'btn btn-info'

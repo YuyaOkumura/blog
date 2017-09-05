@@ -1,6 +1,7 @@
 .clearfix
   h3.article-title
     = @article.title
+    
   p.article-created = "更新日時: #{@article.updated_at}"
   = render partial: 'modules/social_share', locals: { article: @article }
   p.article-desc
