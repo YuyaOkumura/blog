@@ -15,6 +15,22 @@ class Article < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
 
+  # paperclip setting
+  has_attached_file :main_image, styles: {
+                              thumb: "500x500#",
+                            },
+                            storage: :s3,
+                            s3_permissions: :private,
+                            s3_credentials: "#{Rails.root}/config/settings/#{Rails.env}_s3.yml",
+                            path: ":class/:attachment/:id/:style.:extension"
+
+  validates_attachment_content_type :main_image, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
+  def authenticated_image_url(style)
+    main_image.s3_object(style).url_for(:read, secure: true)
+  end
+
+  # redis setting
   def increment_view
     self.class.views.increment(id)
   end

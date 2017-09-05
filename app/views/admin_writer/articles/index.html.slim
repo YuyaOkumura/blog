@@ -4,6 +4,7 @@ h2 記事管理
 table.table.table-striped
   thead
     tr
+      th サムネイル
       th 記事名
       th 内容
       th 関連タグ
@@ -15,6 +16,7 @@ table.table.table-striped
   tbody
     - @articles.each do |article|
       tr
+        td = image_tag(get_main_image_url(article: article, style: :thumb))
         td = article.title
         td = article.content.truncate(50, omission: '・・・')
         - if article.article_tags.present?

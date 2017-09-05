@@ -1,6 +1,7 @@
 .clearfix
   h3.article-title
     = @article.title
+    
   p.article-created = "更新日時: #{@article.updated_at}"
   = render partial: 'modules/social_share', locals: { article: @article }
   p.article-desc
@@ -10,6 +11,7 @@
     - @article.tags.each do |tag|
       = link_to tag.name, tag_path(tag.slug), class: 'tag'
 .markdown
+  = image_tag(get_main_image_url(article: @article, style: :original), class: 'main-image')
   = markdown(@article.content).html_safe
 = render partial: 'modules/social_share', locals: { article: @article }
 = render partial: 'modules/related_articles', locals: { tags: @article.tags, article: @article }

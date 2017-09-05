@@ -1,6 +1,7 @@
 .article.pull-left
   = link_to article_path(article)
     .article-head
+      = image_tag(get_main_image_url(article: article, style: :thumb), width: '100%', class: 'thumb-image')
       p.article-card-title = article.title
       p.article-card-created = article.created_at
   .article-body

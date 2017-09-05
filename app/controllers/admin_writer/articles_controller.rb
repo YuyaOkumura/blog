@@ -19,7 +19,7 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to [:admin_writer, @article], notice: 'Article was successfully created.'
+      redirect_to [:admin_writer, @article], notice: '記事は正しく作成されました'
     else
       render :new
     end
@@ -27,7 +27,7 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to [:admin_writer, @article], notice: 'Article was successfully updated.'
+      redirect_to [:admin_writer, @article], notice: '記事は正しく更新されました'
     else
       render :edit
     end
@@ -35,9 +35,10 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
 
   def destroy
     @article.destroy
-    redirect_to admin_writer_articles_url, notice: 'Article was successfully destroyed.'
+    redirect_to admin_writer_articles_url, notice: '記事は正しく削除されました'
   end
 
+  # todo tags_controllerに移動
   def tag_check
     tag = Tag.where(name: tag_name_params[:tag_name])
     if tag.present?
@@ -46,9 +47,6 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
       result = false
     end
     render json: result
-  end
-
-  def preview
   end
 
   private
@@ -62,6 +60,7 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
                                       :content,
                                       :is_public,
                                       :user_id,
+                                      :main_image,
                                       article_tags_attributes: [
                                         :id,
                                         :article_id,
@@ -71,6 +70,7 @@ class AdminWriter::ArticlesController < AdminWriter::ApplicationController
       )
     end
 
+    # todo tags_controllerに移動
     def tag_name_params
       params.require(:article).permit(:tag_name)
     end

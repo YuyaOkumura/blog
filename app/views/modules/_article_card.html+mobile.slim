@@ -1,7 +1,9 @@
 .article.pull-left
   = link_to article_path(article)
-    .article-head
-      p.article-card-title = article.title.truncate(30)
+    .flex
+      = image_tag(get_main_image_url(article: article, style: :thumb), width: '30%', height: '30%', class: 'thumb-image')
+      .article-head
+        p.article-card-title = article.title.truncate(30)
   .article-body
     - article.tags.each do |tag|
       = link_to tag.name, tag_path(tag.slug), class: 'tag'

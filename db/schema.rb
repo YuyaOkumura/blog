@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170714124157) do
+ActiveRecord::Schema.define(version: 20170723101547) do
 
   create_table "article_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "article_id", null: false
@@ -22,13 +22,17 @@ ActiveRecord::Schema.define(version: 20170714124157) do
   end
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",                                  null: false
-    t.string   "title",                                    null: false
-    t.text     "content",    limit: 65535,                 null: false
-    t.boolean  "is_public",                default: false, null: false
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
-    t.text     "desc",       limit: 65535
+    t.integer  "user_id",                                               null: false
+    t.string   "title",                                                 null: false
+    t.text     "content",                 limit: 65535,                 null: false
+    t.boolean  "is_public",                             default: false, null: false
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
+    t.text     "desc",                    limit: 65535
+    t.string   "main_image_file_name"
+    t.string   "main_image_content_type"
+    t.integer  "main_image_file_size"
+    t.datetime "main_image_updated_at"
     t.index ["user_id"], name: "index_articles_on_user_id", using: :btree
   end
 
@@ -38,6 +42,15 @@ ActiveRecord::Schema.define(version: 20170714124157) do
     t.string   "content",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "markdown_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -1,8 +1,15 @@
 .markdown {
+  margin-top: 2rem;
   margin-bottom: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid $mediamColor;
   color: $spotColor;
   letter-spacing: .2rem;
   line-height: 2;
+
+  .main-image {
+    margin-bottom: 3rem;
+  }
 
   li {
     list-style-type: circle;
@@ -18,5 +25,9 @@
 
   p {
     padding-bottom: 2rem;
+  }
+
+  img {
+    max-width: 100%;
   }
 }

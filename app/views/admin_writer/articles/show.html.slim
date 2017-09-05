@@ -2,19 +2,19 @@ h2 = @article.title
 
 .mb2rem
   = link_to 'もどる', admin_writer_articles_path, class: 'btn btn-info mr2rem'
+  = link_to '編集', edit_admin_writer_article_path(@article), class: 'btn btn-info mr2rem'
+  = link_to '削除', [:admin_writer, @article], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger mr2rem'
 
-table.table.table-striped
-  thead
-    tr
-      th タイトル
-      th 内容
-      th 投稿者id
-      th リンク
-      th
-  tbody
-    tr
-      td = @article.title
-      td = @article.content
-      td = @article.user_id
-      td = link_to '編集', edit_admin_writer_article_path(@article), class: 'btn btn-info mr2rem'
-      td = link_to '削除', [:admin_writer, @article], data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger mr2rem'
+.clearfix
+  h3.article-title
+    = @article.title
+  p.article-created = "更新日時: #{@article.updated_at}"
+  p.article-desc
+    = @article.desc
+  .article-tags
+    p.article-tags-title
+    - @article.tags.each do |tag|
+      = link_to tag.name, tag_path(tag.slug), class: 'tag'
+.markdown
+  = image_tag(get_main_image_url(article: @article, style: :original), width: '100%', class: 'main-image')
+  = markdown(@article.content).html_safe
